@@ -8,7 +8,6 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.servlet.ModelAndView;
 
 import com.emprestimo.emprestimoapp.modelo.Customer;
-import com.emprestimo.emprestimoapp.service.CollectorService;
 import com.emprestimo.emprestimoapp.service.CustomerService;
 
 public class CustomerController {
