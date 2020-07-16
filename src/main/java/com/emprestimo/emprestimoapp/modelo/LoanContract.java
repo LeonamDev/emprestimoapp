@@ -30,7 +30,7 @@ public class LoanContract {
 	
 	
 	@ManyToOne
-	private Custumer custumer;
+	private Customer custumer;
 	
 	@ManyToOne
 	private Collector collector;
@@ -150,14 +150,14 @@ public class LoanContract {
 	/**
 	 * @return the custumer
 	 */
-	public Custumer getCustumer() {
+	public Customer getCustumer() {
 		return custumer;
 	}
 
 	/**
 	 * @param custumer the custumer to set
 	 */
-	public void setCustumer(Custumer custumer) {
+	public void setCustumer(Customer custumer) {
 		this.custumer = custumer;
 	}
 

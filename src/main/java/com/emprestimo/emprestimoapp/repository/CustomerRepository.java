@@ -3,9 +3,9 @@ package com.emprestimo.emprestimoapp.repository;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
-import com.emprestimo.emprestimoapp.modelo.Custumer;
+import com.emprestimo.emprestimoapp.modelo.Customer;
 
 @Repository
-public interface CustomerRepository extends JpaRepository<Custumer, Integer>{
+public interface CustomerRepository extends JpaRepository<Customer, Integer> {
 
 }

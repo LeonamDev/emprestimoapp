@@ -6,6 +6,6 @@ import org.springframework.stereotype.Repository;
 import com.emprestimo.emprestimoapp.modelo.LoanContract;
 
 @Repository
-public interface LoanContractRepository extends JpaRepository<LoanContract, Integer>{
+public interface LoanContractRepository extends JpaRepository<LoanContract, Integer> {
 
 }

@@ -6,6 +6,8 @@ import org.springframework.stereotype.Repository;
 import com.emprestimo.emprestimoapp.modelo.Collector;
 
 @Repository
-public interface CollectorRepository  extends JpaRepository<Collector, Integer>{
+public interface CollectorRepository extends JpaRepository<Collector, Integer> {
+
+
 
 }
