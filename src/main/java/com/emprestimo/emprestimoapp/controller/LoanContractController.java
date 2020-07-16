@@ -34,13 +34,13 @@ public class LoanContractController {
 	}
 
 	@GetMapping("/edit/{id}")
-	public ModelAndView edit(@PathVariable("id") Integer id) {
+	public ModelAndView edit(@PathVariable("id") Long id) {
 
 		return add(loanContractService.findOne(id));
 	}
 
 	@GetMapping("/delete/{id}")
-	public ModelAndView delete(@PathVariable("id") Integer id) {
+	public ModelAndView delete(@PathVariable("id") Long id) {
 
 		loanContractService.delete(id);
 

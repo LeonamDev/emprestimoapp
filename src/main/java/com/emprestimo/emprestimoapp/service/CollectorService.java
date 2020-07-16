@@ -1,7 +1,6 @@
 package com.emprestimo.emprestimoapp.service;
 
 import java.util.List;
-import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -20,8 +19,8 @@ public class CollectorService {
 		return collectorRepository.findAll();
 	}
 
-	public Optional<Collector> findOne(Integer id) {
-		return collectorRepository.findById(id);
+	public Collector findOne(Long id) {
+		return collectorRepository.findOne(id);
 	}
 
 	@Transactional
@@ -30,7 +29,7 @@ public class CollectorService {
 	}
 
 	@Transactional
-	public void delete(Integer id) {
+	public void delete(Long id) {
 		collectorRepository.deleteById(id);
 	}
 

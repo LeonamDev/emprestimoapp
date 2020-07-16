@@ -6,6 +6,8 @@ import org.springframework.stereotype.Repository;
 import com.emprestimo.emprestimoapp.modelo.Payment;
 
 @Repository
-public interface PaymentRepository extends JpaRepository<Payment, Integer> {
+public interface PaymentRepository extends JpaRepository<Payment, Long> {
+
+	Payment findOne(Long id);
 
 }

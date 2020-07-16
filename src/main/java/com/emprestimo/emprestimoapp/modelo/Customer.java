@@ -9,7 +9,7 @@ public class Customer {
 	
 	@Id
 	@GeneratedValue
-	private Integer customerNumber;
+	private Long customerNumber;
 	
 	private String customerName;
 	
@@ -18,7 +18,7 @@ public class Customer {
 	/**
 	 * @return the customerNumber
 	 */
-	public Integer getCustomerNumber() {
+	public Long getCustomerNumber() {
 		return customerNumber;
 	}
 
@@ -26,7 +26,7 @@ public class Customer {
 	/**
 	 * @param customerNumber the customerNumber to set
 	 */
-	public void setCustomerNumber(Integer customerNumber) {
+	public void setCustomerNumber(Long customerNumber) {
 		this.customerNumber = customerNumber;
 	}
 

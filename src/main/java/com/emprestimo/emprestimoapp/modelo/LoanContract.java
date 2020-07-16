@@ -12,7 +12,7 @@ public class LoanContract {
 	
 	@Id
 	@GeneratedValue
-	private Integer contractID;
+	private Long contractID;
 	
 	private Date dateContractStarts;
 	
@@ -38,14 +38,14 @@ public class LoanContract {
 	/**
 	 * @return the contractID
 	 */
-	public Integer getContractID() {
+	public Long getContractID() {
 		return contractID;
 	}
 
 	/**
 	 * @param contractID the contractID to set
 	 */
-	public void setContractID(Integer contractID) {
+	public void setContractID(Long contractID) {
 		this.contractID = contractID;
 	}
 

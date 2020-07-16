@@ -7,9 +7,7 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.servlet.ModelAndView;
 
-import com.emprestimo.emprestimoapp.modelo.LoanContract;
 import com.emprestimo.emprestimoapp.modelo.Payment;
-import com.emprestimo.emprestimoapp.service.LoanContractService;
 import com.emprestimo.emprestimoapp.service.PaymentService;
 
 public class PaymentController {
@@ -37,13 +35,13 @@ public class PaymentController {
 	}
 
 	@GetMapping("/edit/{id}")
-	public ModelAndView edit(@PathVariable("id") Integer id) {
+	public ModelAndView edit(@PathVariable("id") Long id) {
 
 		return add(paymentService.findOne(id));
 	}
 
 	@GetMapping("/delete/{id}")
-	public ModelAndView delete(@PathVariable("id") Integer id) {
+	public ModelAndView delete(@PathVariable("id") Long id) {
 
 		paymentService.delete(id);
 

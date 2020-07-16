@@ -1,7 +1,6 @@
 package com.emprestimo.emprestimoapp.service;
 
 import java.util.List;
-import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -20,8 +19,8 @@ public class PaymentService {
 		return paymentRepository.findAll();
 	}
 
-	public Optional<Payment> findOne(Integer id) {
-		return paymentRepository.findById(id);
+	public Payment findOne(Long id) {
+		return paymentRepository.findOne(id);
 	}
 
 	@Transactional
@@ -30,12 +29,12 @@ public class PaymentService {
 	}
 
 	@Transactional
-	public void delete(Integer id) {
+	public void delete(Long id) {
 		paymentRepository.deleteById(id);
 	}
 
 	public PaymentService(PaymentRepository paymentRepository) {
-		
+
 		this.paymentRepository = paymentRepository;
 	}
 

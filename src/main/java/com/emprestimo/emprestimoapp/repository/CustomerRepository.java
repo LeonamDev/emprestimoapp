@@ -6,6 +6,8 @@ import org.springframework.stereotype.Repository;
 import com.emprestimo.emprestimoapp.modelo.Customer;
 
 @Repository
-public interface CustomerRepository extends JpaRepository<Customer, Integer> {
+public interface CustomerRepository extends JpaRepository<Customer, Long> {
+
+	Customer findOne(Long id);
 
 }

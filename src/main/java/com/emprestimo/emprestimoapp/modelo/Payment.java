@@ -12,7 +12,7 @@ public class Payment {
 
 	@Id
 	@GeneratedValue
-	private Integer paymentID;
+	private Long paymentID;
 	
 	private Date dateOfPayment;
 	
@@ -23,14 +23,14 @@ public class Payment {
 	/**
 	 * @return the paymentID
 	 */
-	public Integer getPaymentID() {
+	public Long getPaymentID() {
 		return paymentID;
 	}
 
 	/**
 	 * @param paymentID the paymentID to set
 	 */
-	public void setPaymentID(Integer paymentID) {
+	public void setPaymentID(Long paymentID) {
 		this.paymentID = paymentID;
 	}
 

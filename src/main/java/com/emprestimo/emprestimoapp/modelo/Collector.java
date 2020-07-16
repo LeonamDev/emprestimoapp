@@ -9,7 +9,7 @@ public class Collector {
 	
 	@Id
 	@GeneratedValue
-	private Integer collectorID;
+	private Long collectorID;
 	
 	private String collectorName;
 	
@@ -17,14 +17,14 @@ public class Collector {
 	/**
 	 * @return the collectorID
 	 */
-	public Integer getCollectorID() {
+	public Long getCollectorID() {
 		return collectorID;
 	}
 
 	/**
 	 * @param collectorID the collectorID to set
 	 */
-	public void setCollectorID(Integer collectorID) {
+	public void setCollectorID(Long collectorID) {
 		this.collectorID = collectorID;
 	}
 
