@@ -19,8 +19,8 @@ public class LoanContractService {
 		return loanContractRepository.findAll();
 	}
 
-	public LoanContract findOne(Long id) {
-		return loanContractRepository.findOne(id);
+	public LoanContract findOne(String id) {
+		return loanContractRepository.getOne(Long.valueOf(id));
 	}
 
 	@Transactional

@@ -19,8 +19,8 @@ public class PaymentService {
 		return paymentRepository.findAll();
 	}
 
-	public Payment findOne(Long id) {
-		return paymentRepository.findOne(id);
+	public Payment findOne(String id) {
+		return paymentRepository.getOne(Long.valueOf(id));
 	}
 
 	@Transactional

@@ -19,8 +19,8 @@ public class CollectorService {
 		return collectorRepository.findAll();
 	}
 
-	public Collector findOne(Long id) {
-		return collectorRepository.findOne(id);
+	public Collector findOne(String id) {
+		return collectorRepository.getOne(Long.valueOf(id));
 	}
 
 	@Transactional
