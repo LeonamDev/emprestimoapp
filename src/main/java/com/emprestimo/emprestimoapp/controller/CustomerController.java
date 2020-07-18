@@ -1,4 +1,4 @@
-package com.emprestimo.emprestimoapp.controller;
+/*package com.emprestimo.emprestimoapp.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.validation.BindingResult;
@@ -59,4 +59,4 @@ public class CustomerController {
 		return findAll();
 	}
 
-}
+}*/

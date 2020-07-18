@@ -1,4 +1,4 @@
-package com.emprestimo.emprestimoapp.controller;
+/*package com.emprestimo.emprestimoapp.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -61,4 +61,4 @@ public class CollectorController {
 		return findAll();
 	}
 
-}
+}*/
