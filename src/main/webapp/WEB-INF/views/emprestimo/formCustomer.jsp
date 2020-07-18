@@ -1,8 +1,8 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 
-<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
-
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core"  prefix="c"%>
+	
 <!DOCTYPE html>
 <html>
 <head>
@@ -19,54 +19,50 @@
 
 
 	<div class="container">
-
-
+	
 		<div class="jumbotron">
 		   <h1> <i class="fa fa-tachometer" aria-hidden="true"></i> Aplicacao com springmvc</h1>
 		   <h3>Com spring boot</h3>
 		</div>
 
-		<div class="d-flex justify-content-between">
-			<h1>Listagem de Customer(Clientes agiotados)</h1>
-			<h3>
-				<a class="btn btn-primary" href='<c:url value="/cadastro" />'> Cadastrar novo Customer </a>
-			</h3>
-
-		</div>
-
-
-		<table class="table">
-			<thead>
-				<tr>
-					<th>Codigo</th>
-					<th>Nome</th>
-					<th>Endereço</th>
-					<th>Ações</th>
-				</tr>
-			</thead>
-
-			<tbody>
-				<c:forEach var="customer" items="${customer}">
-
-					<tr>
-						<td>${customer.customerNumber}</td>
-						<td>${customer.customerName}</td>
-						<td>${customer.address}</td>
-						<td><a href='<c:url value="/formedit/${customer.customerNumber}" />'>
-								<button type="button" class="btn btn-primary">Editar</button>
-						</a> <a href='<c:url value="/delete/${customer.customerNumber}" />'>
-								<button type="button" class="btn btn-danger">Excluir</button>
-						</a></td>
-					</tr>
-
-				</c:forEach>
-
-
-			</tbody>
-
-
-		</table>
-
+		<h1>${tipoForm} customer</h1>
+		
+		
+		<form action='<c:url value="/salvar" />'  method="post">
+		
+		   <input  type="hidden" name="codigo" value="${customer.customerNumber}">
+		
+		   <div class="form-group" >
+		   	   <label for="customerName">Nome</label>
+		   	   <input
+		   	      type="text"
+		   	      class="form-control"
+		   	      name="customerName"
+		   	      id="customerName"
+		   	      value="${customer.customerName}"
+		   	   >		   
+		   </div>
+		   
+		   <div class="form-group" >
+		   	   <label  for="address">Endereço</label>
+		   	   <input
+		   	      type="text"
+		   	      class="form-control"
+		   	      name="address"
+		   	      id="address"
+		   	      value="${customer.address}"
+		   	   >		   
+		   </div>
+		   
+		   <input type="submit"  class="btn btn-primary" value="Salvar" >  
+		  
+		    <a class="btn btn-secondary" href='<c:url value="/" />' ><i class="fa fa-chevron-circle-left" aria-hidden="true"></i> Voltar a listagem </a>
+		
+		
+		</form>
+		
+		
+		
 
 	</div>
 
