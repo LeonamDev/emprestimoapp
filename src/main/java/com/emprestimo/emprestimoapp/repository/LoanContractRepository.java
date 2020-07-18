@@ -8,6 +8,4 @@ import com.emprestimo.emprestimoapp.modelo.LoanContract;
 @Repository
 public interface LoanContractRepository extends JpaRepository<LoanContract, Long> {
 
-	LoanContract findOne(Long id);
-
 }

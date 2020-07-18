@@ -8,6 +8,4 @@ import com.emprestimo.emprestimoapp.modelo.Customer;
 @Repository
 public interface CustomerRepository extends JpaRepository<Customer, Long> {
 
-	Customer findOne(Long id);
-
 }
