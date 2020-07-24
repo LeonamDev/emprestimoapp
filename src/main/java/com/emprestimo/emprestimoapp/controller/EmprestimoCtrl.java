@@ -13,56 +13,47 @@ import org.springframework.web.servlet.ModelAndView;
 import com.emprestimo.emprestimoapp.modelo.Customer;
 import com.emprestimo.emprestimoapp.service.CustomerService;
 
-
 @Controller
 public class EmprestimoCtrl {
-	
+
 	@Autowired
 	private CustomerService service;
-//	@Autowired
-//	private CustomerRepository repository;
-	
-	
+
+
 	@GetMapping(value = "/")
 	public String listaCustomer(Model model) {
 		List<Customer> customer = service.findAll();
 		model.addAttribute("customer", customer);
 		return "home";
 	}
-	
-	
+
 	@GetMapping(value = "/cadastro")
-	public String form(Model model) {	
+	public String form(Model model) {
 		model.addAttribute("tipoForm", "Cadastro de");
 		return "emprestimo/formCustomer";
 	}
-	
+
 	@PostMapping(value = "/salvar")
-	public String salvar(Model model, Customer customer ) {
-		service.save(customer);		
+	public String salvar(Model model, Customer customer) {
+		service.save(customer);
 		return "redirect:/";
-	}	
-	
+	}
+
 	@GetMapping(value = "/delete/{id}")
-	public String delete(@PathVariable(name = "id") Long id ) {
+	public String delete(@PathVariable(name = "id") Long id) {
 		service.delete(id);
 		return "redirect:/";
 	}
-	
-	/*
-	 * @GetMapping(value = "/formedit") public String editform(Model model) {
-	 * model.addAttribute("tipoForm", "Editar "); return
-	 * "emprestimo/formEditCustomer"; }
-	 */
-	
-	@PostMapping(value = "/formedit/{id}")
-	public ModelAndView formedit(@PathVariable(name = "id") Long id ) {	
-		
-		ModelAndView model = new ModelAndView("formedit");
+
+	@GetMapping(value = "/formedit/{id}")
+	public ModelAndView formedit(@PathVariable(name = "id") Long id) {
+
+		ModelAndView model = new ModelAndView();
 		Customer customer = service.findOne(id);
-		model.addObject("customer", customer);
+		model.addObject("tipoForm", "Editar ");
+		model.setViewName("emprestimo/formEditCustomer");
 		return model;
+
 	}
-	
 
 }
