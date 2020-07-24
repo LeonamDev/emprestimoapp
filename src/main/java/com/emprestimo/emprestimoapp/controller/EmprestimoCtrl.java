@@ -5,8 +5,10 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.servlet.ModelAndView;
 
 import com.emprestimo.emprestimoapp.modelo.Customer;
 import com.emprestimo.emprestimoapp.service.CustomerService;
@@ -17,26 +19,50 @@ public class EmprestimoCtrl {
 	
 	@Autowired
 	private CustomerService service;
+//	@Autowired
+//	private CustomerRepository repository;
 	
 	
-	@RequestMapping( value = "/", method = RequestMethod.GET )
-	public String listaCostumer(Model model) {
+	@GetMapping(value = "/")
+	public String listaCustomer(Model model) {
 		List<Customer> customer = service.findAll();
 		model.addAttribute("customer", customer);
 		return "home";
 	}
 	
 	
-	@RequestMapping( value = "/cadastro", method = RequestMethod.GET )
+	@GetMapping(value = "/cadastro")
 	public String form(Model model) {	
 		model.addAttribute("tipoForm", "Cadastro de");
 		return "emprestimo/formCustomer";
 	}
 	
-	@RequestMapping(value = "/salvar", method = RequestMethod.POST)
+	@PostMapping(value = "/salvar")
 	public String salvar(Model model, Customer customer ) {
 		service.save(customer);		
 		return "redirect:/";
 	}	
+	
+	@GetMapping(value = "/delete/{id}")
+	public String delete(@PathVariable(name = "id") Long id ) {
+		service.delete(id);
+		return "redirect:/";
+	}
+	
+	/*
+	 * @GetMapping(value = "/formedit") public String editform(Model model) {
+	 * model.addAttribute("tipoForm", "Editar "); return
+	 * "emprestimo/formEditCustomer"; }
+	 */
+	
+	@PostMapping(value = "/formedit/{id}")
+	public ModelAndView formedit(@PathVariable(name = "id") Long id ) {	
+		
+		ModelAndView model = new ModelAndView("formedit");
+		Customer customer = service.findOne(id);
+		model.addObject("customer", customer);
+		return model;
+	}
+	
 
 }

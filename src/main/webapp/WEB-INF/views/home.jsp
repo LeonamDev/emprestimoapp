@@ -54,8 +54,8 @@
 						<td>${customer.address}</td>
 						<td><a href='<c:url value="/formedit/${customer.customerNumber}" />'>
 								<button type="button" class="btn btn-primary">Editar</button>
-						</a> <a href='<c:url value="/delete/${customer.customerNumber}" />'>
-								<button type="button" class="btn btn-danger">Excluir</button>
+ 						</a> <a href='<c:url value="/delete/${customer.customerNumber}" />'> 
+								<button type="button" class="btn btn-danger" >Excluir</button>
 						</a></td>
 					</tr>
 
