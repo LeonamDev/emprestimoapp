@@ -24,8 +24,8 @@ public class LoanContractService {
 	}
 
 	@Transactional
-	public LoanContract save(LoanContract LoanContract) {
-		return loanContractRepository.save(LoanContract);
+	public LoanContract save(LoanContract loanContract) {
+		return loanContractRepository.save(loanContract);
 	}
 
 	@Transactional

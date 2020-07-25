@@ -1,5 +1,6 @@
 package com.emprestimo.emprestimoapp.modelo;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
@@ -9,6 +10,7 @@ public class Customer {
 	
 	@Id
 	@GeneratedValue
+	@Column(name="CustomerNumber")
 	private Long customerNumber;
 	
 	private String customerName;

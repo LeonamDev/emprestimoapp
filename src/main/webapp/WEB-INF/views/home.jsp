@@ -28,7 +28,7 @@
 		</div>
 
 		<div class="d-flex justify-content-between">
-			<h1>Listagem de Customer(Clientes agiotados)</h1>
+			<h1>Listagem de Customer</h1>
 			<h3>
 				<a class="btn btn-primary" href='<c:url value="/cadastro" />'> Cadastrar novo Customer </a>
 			</h3>
@@ -53,7 +53,10 @@
 						<td>${customer.customerNumber}</td>
 						<td>${customer.customerName}</td>
 						<td>${customer.address}</td>
-						<td><a href='<c:url value="/formedit/${customer.customerNumber}" />'>
+						<td><a href='<c:url value= "/emprestimo/${customer.customerNumber }" />'>
+						<button type="button" class="btn btn-dark">Pegar Emprestimo</button>
+						</a>						
+						<a href='<c:url value="/formedit/${customer.customerNumber}" />'>
 								<button type="button" class="btn btn-primary">Editar</button>
  						</a> <a href='<c:url value="/delete/${customer.customerNumber}" />'> 
 								<button type="button" class="btn btn-danger" >Excluir</button>
