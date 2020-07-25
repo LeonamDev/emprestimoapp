@@ -14,11 +14,10 @@ import com.emprestimo.emprestimoapp.modelo.Customer;
 import com.emprestimo.emprestimoapp.service.CustomerService;
 
 @Controller
-public class EmprestimoCtrl {
+public class CustomerCtrl {
 
 	@Autowired
 	private CustomerService service;
-
 
 	@GetMapping(value = "/")
 	public String listaCustomer(Model model) {
@@ -35,6 +34,11 @@ public class EmprestimoCtrl {
 
 	@PostMapping(value = "/salvar")
 	public String salvar(Model model, Customer customer) {
+		if (customer.getCustomerNumber() != null) {
+			Customer customerOld = service.findOne(customer.getCustomerNumber().toString());
+			customerOld.setCustomerName(customer.getCustomerName());
+			service.save(customerOld);
+		}
 		service.save(customer);
 		return "redirect:/";
 	}
@@ -46,14 +50,12 @@ public class EmprestimoCtrl {
 	}
 
 	@GetMapping(value = "/formedit/{id}")
-	public ModelAndView formedit(@PathVariable(name = "id") Long id) {
+	public String formedit(@PathVariable("id") String id, Model model) {
 
-		ModelAndView model = new ModelAndView();
 		Customer customer = service.findOne(id);
-		model.addObject("tipoForm", "Editar ");
-		model.setViewName("emprestimo/formEditCustomer");
-		return model;
+		model.addAttribute("Customer", customer);
 
+		return "emprestimo/formEditCustomer";
 	}
 
 }

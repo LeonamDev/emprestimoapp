@@ -19,8 +19,8 @@ public class CustomerService {
 		return customerRepository.findAll();
 	}
 
-	public Customer findOne(Long id) {
-		return customerRepository.findById(id).get();
+	public Customer findOne(String id) {
+		return customerRepository.findById(Long.valueOf(id)).get();
 	}
 
 	@Transactional

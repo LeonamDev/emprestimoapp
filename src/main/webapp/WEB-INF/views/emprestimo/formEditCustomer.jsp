@@ -2,7 +2,7 @@
 	pageEncoding="UTF-8"%>
 
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core"  prefix="c"%>
-<%@ taglib uri="http://www.springframework.org/tags" prefix="spring"%>   
+
 	
 <!DOCTYPE html>
 <html >
@@ -16,7 +16,7 @@
 	crossorigin="anonymous">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
-<body>
+<body class="bg-light" onload="init(${customer.customerNumber })">
 
 
 	<div class="container">
